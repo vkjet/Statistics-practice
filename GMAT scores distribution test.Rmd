@@ -34,7 +34,7 @@ pnorm(5, 4.29, 2.09)
 
 # Looks like the total and verbal scores might follow the nearly normal distribution. 
 
-# The means of the reported distributions are always lower that the medians, thus we deal with the left skewed distributions. Also, the distributions here are not follow the 68-95-99.7% rule.
+# The means of the reported distributions are always lower that the medians, thus we deal with the left skewed distributions. Also, the distributions here don't follow the 68-95-99.7% rule.
 
 ```
 
