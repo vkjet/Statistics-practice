@@ -1,0 +1,68 @@
+---
+title: "GMAT scores distribution check"
+output:
+  html_document:
+    df_print: paged
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+# Check if GMAT scores are normally distributed. My recent scores are: total 680, quant 43, verbal 41, IR 5). And my reported percentiles are: 82, 47, 93, 54 respectively. Means and stds are from the GMAC website https://www.mba.com/exams/gmat/after-the-exam/gmat-scores-and-score-reports/what-gmat-percentile-ranking-means
+
+# See the reported distributions in pdf files attached.
+
+# Check total score (680, 82) distribution first - it's close to reported percentile but not equal.
+qnorm(0.82, 561.27, 119.31) # qnorm returns a score that should correspond to a given percentile for normal distr.
+pnorm(680, 561.27, 119.31) # pnorm returns the Z-value of the given score for normal distribution.
+
+# Check quant, verbal and IR
+
+# Quant (score 43, percentile 47) - significantly different results
+qnorm(0.47, 39.93, 10.53)
+pnorm(43, 39.93, 10.53)
+
+# Verbal (score 41, percentile 93) - very close to reported data
+qnorm(0.93, 27.04, 9.24)
+pnorm(41, 27.04, 9.24)
+
+# IR (score 5, percentile 54) - different values
+qnorm(0.54, 4.29, 2.09)
+pnorm(5, 4.29, 2.09)
+
+# Looks like the total and verbal scores might follow the nearly normal distribution. 
+
+# The means of the reported distributions are always lower that the medians, thus we deal with the left skewed distributions. Also, the distributions here are not follow the 68-95-99.7% rule.
+
+```
+
+
+```{r}
+
+# Tasks for week 4
+
+qnorm(0.1, 21, 5)
+
+qnorm(0.2, 77, 5)
+
+```
+
+```{r}
+
+# Calculate the number of combinations (when the order doesn't matter) - choose k from n
+
+choose(9, 2)
+choose(100, 5)
+
+# Binomial distribution
+# Only 13% of employees are engaged at work. Among a random sample of 10 employees calculate the probability that exactly 8 of them are engaged at work.  
+
+dbinom(8, size = 10, p = 0.13)
+
+# the prob is very small, obviously
+
+dbinom(2, size = 10, p = 0.13)
+
+```
