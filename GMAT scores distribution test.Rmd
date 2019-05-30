@@ -66,3 +66,24 @@ dbinom(8, size = 10, p = 0.13)
 dbinom(2, size = 10, p = 0.13)
 
 ```
+
+```{r}
+# While it is often assumed that the probabilities of having a boy or a girl are the same, the actual probability of having a boy is slightly higher at 0.51. Suppose a couple plans to have 3 children. What is the probability that exactly 2 of them will be boys?
+
+dbinom(2, 3, 0.51)
+
+# Your friend is about to begin an introductory chemistry course at his university. The course has collected data from students on their study habits for many years, and the professor reports that study times (in hours) for the final exam closely follow a normal distribution with mean 24 and standard deviation 4. What percentage of students study 34 hours or more?
+
+pnorm(33.5, mean = 24, sd = 4, lower.tail = FALSE)
+
+# The National Vaccine Information Center estimates that 90% of Americans have had the disease chickenpox by the time they reach adulthood. What is the probability that exactly 92 out of 100 randomly sampled American adults had chickenpox during childhood?
+
+dbinom(92, 100, 0.9)
+
+# Your boss is a biologist who needs wood samples from long-leaf pine trees with a fungal disease which is only visible under a microscope, and she sends you on an assignment to collect the samples. She wants at least 50 different diseased samples. She tells you that approximately 28% of long-leaf pine trees currently have the fungal disease. If you sample 160 long-leaf pine trees at random, what is the probability you’ll have at least 50 diseased samples to return to your boss? (Use the normal approximation to calculate this probability and chose the closest answer to the question.)
+
+sum(dbinom(50:160, 160, 0.28))
+
+
+```
+
